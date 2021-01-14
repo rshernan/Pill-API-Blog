@@ -41,12 +41,12 @@ body {
 }
 
 .post i {
-    margin: 5px;
+    margin: 8px;
 }
 
 .post_title {
   font-size: 25px;
-  margin: 10px 0;
+  margin: 10px 20px 10px 0;
   color: black;
 }
 
