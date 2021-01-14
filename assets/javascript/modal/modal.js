@@ -1,8 +1,10 @@
+const backgroundModal = $('<div class="div__modal__background"></div>');
 const modal = $('<div class="div__modal"><div>');
 const closeButton = $('<button class="button__modal__close">close</button>');
+backgroundModal.append(modal);
 modal.append(closeButton);
 
-function inspectPost(){
+function inspectPost(userId, postId){
     const postTitle = $("<h1 class='title_modal'>Post Title</h1>");
     const postBody = $("<p></p>");
     const userTitle = $("<h2 class='title_modal'>USER</h2>");
@@ -10,6 +12,18 @@ function inspectPost(){
     const userEmail = $("<p></p>");
     const titleComments = $("<h1 class='title__modal'>Comments</h1>");
     const buttonComments = $("<button class='button__modal__load'>Load Comments</button>");
+    buttonComments.on("click",function(){
+        loadComents(postId);
+    })
+    $.ajax("https://jsonplaceholder.typicode.com/users/"+userId)
+    .then(
+        function success(data){
+            console.log(data);
+        }, function failed(error){
+
+        }
+    );
+    $('body').append(backgroundModal);
 }
 
 function editPost(){
@@ -19,4 +33,15 @@ function editPost(){
     const inputTitle = $("<input/>");
     const inputBody = $("<input/>");
     const buttonSave = $("<button>Save</button>");
+}
+
+function loadComents(postId){
+    $.ajax("https://jsonplaceholder.typicode.com/posts/"+postId+"/comments")
+    .then(
+        function success(data){
+            console.log(data);
+        }, function failed(error){
+
+        }
+    );
 }
