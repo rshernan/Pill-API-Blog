@@ -49,3 +49,9 @@ body {
   margin: 10px 0;
   color: black;
 }
+
+.div__modal{
+  width: 80vw;
+  height: 80vw;
+  background-color: #f1f1f1;
+}
