@@ -58,6 +58,7 @@ body {
   background-color: #f1f1f1;
   display: flex;
   border-radius: 15px;
+  flex-direction: column;
 }
 
 .div__modal__background{
@@ -86,4 +87,7 @@ body {
 
 .button__modal__close:active{
   box-shadow: none;
+}
+
+.title__modal{
 }
