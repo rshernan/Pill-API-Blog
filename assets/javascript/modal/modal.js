@@ -27,12 +27,46 @@ function inspectPost(userId, postId){
 }
 
 function editPost(){
-    const postTitle = $("<h1 class='title_modal'>Edit post</h1>");
-    const labelTitle = $("<label>Title</label>");
-    const labelBody = $("<label>Body</label>");
-    const inputTitle = $("<input/>");
-    const inputBody = $("<input/>");
-    const buttonSave = $("<button>Save</button>");
+    // const postTitle = $("<h1 class='title_modal'>Edit post</h1>");
+    // const labelTitle = $("<label>Title</label>");
+    // const labelBody = $("<label>Body</label>");
+    // const inputTitle = $("<input/>");
+    // const inputBody = $("<input/>");
+    // const buttonSave = $("<button>Save</button>");
+
+    const editModal = $(`
+    <div class="modal_container">
+        <div class="modal">
+            <h3 class="title_modal">Edit modal</h3>
+            <div class="content_modal">
+                <form class="form_modal" method="post">
+
+                    <label for="post_title">Title</label>
+                    <input class="input" id="post_title" type="text"/>
+                    
+                    <label for="post_body">Body</label>
+                    <input class="input" id="post_body" type="text"/>
+
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>`
+)
+
+
+    $("#modal").append(editModal);
+
+    // $.ajax("https://jsonplaceholder.typicode.com/posts", {
+    //     method: "PUT",
+    //     contentType: "application/json",
+    //     data: JSON.stringify({
+    //         title: "",
+    //         body: "",
+    //     })
+    // })
+
+
 }
 
 function loadComents(postId){
@@ -44,4 +78,5 @@ function loadComents(postId){
 
         }
     );
+
 }

@@ -5,6 +5,15 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   background-color: rgb(240, 239, 239);
+  
+}
+
+button {
+  outline: none;
+}
+
+input {
+  outline: none;
 }
 
 .header {
@@ -52,6 +61,73 @@ body {
   color: black;
 }
 
+.btn {
+  cursor: pointer;
+}
+
+.modal_container {
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(91, 83, 124, 0.788);
+
+}
+
+.modal {
+position: absolute;
+display: flex;
+flex-direction: column;
+background-color: white;
+border-radius: 15px;
+padding: 50px;
+top: 25%;
+width: 40%;
+left: 25%;
+z-index: 1;
+
+}
+
+.title_modal {
+font-size: 20px;
+font-weight: 500;
+}
+
+.content_modal {
+margin-top: 50px;
+}
+
+.form_modal {
+display: flex;
+flex-direction: column;
+}
+
+.form_modal label {
+margin: 10px 0 0 5px;
+font-size: 18px;
+}
+
+.form_modal input {
+margin: 10px 0;
+padding: 0 15px;
+height:  50px;
+border-radius: 15px;
+border: 1px solid rgb(224, 224, 224);
+}
+
+.form_modal button {
+height: 50px;
+margin: 10px 0;
+background-color: rgb(224, 224, 224);
+border-radius: 15px;
+border: none;
+font-size: 18px;
+}
+
+
+
+
 .div__modal{
   width: 70vw;
   height: 70vh;
@@ -87,3 +163,5 @@ body {
 .button__modal__close:active{
   box-shadow: none;
 }
+
+
