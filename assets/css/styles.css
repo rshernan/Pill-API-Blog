@@ -160,7 +160,7 @@ margin: 5px;
 .button__modal__close {
   margin: 10px 10px 10px auto;
   width: 100px;
-  height: 50px;
+  min-height: 40px;
   background-color: #1f1f1f;
   color: white;
   border: black solid 2px;
