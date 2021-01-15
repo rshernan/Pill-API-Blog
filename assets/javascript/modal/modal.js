@@ -64,7 +64,7 @@ function editPost(postId) {
   const bodyInput = $('<input class="form_input" id="post_body" type="text"/>');
 
   const submitBtn = $(
-    `<button class="modal_button" type="submit" id="submit">Save</button>`
+    `<button class="button__modal__load" type="submit" id="submit">Save</button>`
   );
 
   $(".modal").append(modalTitle);
@@ -88,6 +88,7 @@ function editPost(postId) {
 
     setTimeout(function () {
       $(".toast").fadeOut(1500);
+      $(".toast").remove();
     }, 1500);
 
     $.ajax(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
@@ -104,12 +105,17 @@ function editPost(postId) {
         requestStatus.text(`Successful request!!`);
         $(".toast").append(submittedData1);
         $(".toast").append(submittedData2);
+        setTimeout(function(){
+            $(".modal_container").fadeOut(1500);
+            $(".modal_container").remove();
+        }, 1500)
       },
       function failed(err) {
         requestStatus.text("Request failed");
       }
     );
   });
+  
 }
 
 function deletePost(postId) {
