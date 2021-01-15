@@ -125,6 +125,28 @@ border: none;
 font-size: 18px;
 }
 
+.toast {
+  position: absolute;
+  top: 2%;
+  left: 25%;
+  width: 40%;
+  background-color: rgb(164, 161, 204);
+  color: white;
+  
+  border-radius: 15px;
+  padding: 30px 50px;
+}
+
+.toast h3 {
+  margin: 5px 0 20px;
+  font-size: 22px;
+}
+
+.toast p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
 
 
 

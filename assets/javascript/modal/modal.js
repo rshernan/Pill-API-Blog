@@ -33,20 +33,17 @@ function inspectPost(userId, postId){
     modal.append(buttonComments);
 }
 
-function editPost(){
-    // const postTitle = $("<h1 class='title_modal'>Edit post</h1>");
-    // const labelTitle = $("<label>Title</label>");
-    // const labelBody = $("<label>Body</label>");
-    // const inputTitle = $("<input/>");
-    // const inputBody = $("<input/>");
-    // const buttonSave = $("<button>Save</button>");
+function editPost(postId){
+
+    console.log(postId);
 
     const editModal = $(`
     <div class="modal_container">
+        <div class="toast_container"></div>
         <div class="modal">
             <h3 class="title_modal">Edit modal</h3>
             <div class="content_modal">
-                <form class="form_modal" method="post">
+                <form id="edit_form" class="form_modal" method="put">
 
                     <label for="post_title">Title</label>
                     <input class="input" id="post_title" type="text"/>
@@ -54,7 +51,7 @@ function editPost(){
                     <label for="post_body">Body</label>
                     <input class="input" id="post_body" type="text"/>
 
-                    <button type="submit">Save</button>
+                    <button type="submit" id="submit">Save</button>
                 </form>
             </div>
         </div>
@@ -63,15 +60,47 @@ function editPost(){
 
 
     $("#modal").append(editModal);
+    
 
-    // $.ajax("https://jsonplaceholder.typicode.com/posts", {
-    //     method: "PUT",
-    //     contentType: "application/json",
-    //     data: JSON.stringify({
-    //         title: "",
-    //         body: "",
-    //     })
-    // })
+    $("#edit_form").on("submit", function(e){
+
+        e.preventDefault();
+
+        var requestStatus = $(`<h3 class="status"></h3>`);
+        requestStatus.text("Submitting...");
+
+        $(".toast_container").append("<div class='toast'></div>")
+        $(".toast").append(requestStatus)
+
+        $.ajax(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+            method: "PUT",
+            contentType: "application/json",
+            data: JSON.stringify({
+                title: $("#post_title").val(),
+                body: $("#post_body").val(),
+            })
+        
+        }).then(
+            function success(data) {
+                var submittedData1 = $(`<p>Title: ${data.title}</p>`);
+                var submittedData2 = $(`<p>Body: ${data.body}</p>`)
+                requestStatus.text(`Successful request!!`);
+                $(".toast").append(submittedData1);
+                $(".toast").append(submittedData2);
+                
+
+            },
+            function failed(err){
+
+                requestStatus.text("Request failed");
+            }
+        )
+
+    })
+
+
+
+    
 
 
 }
