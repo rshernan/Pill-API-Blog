@@ -10,7 +10,7 @@ function inspectPost(userId, postId){
     const userTitle = $("<h2 class='title_modal'>USER</h2>");
     const userName = $("<p>Example</p>");
     const userEmail = $("<p>Example</p>");
-    const titleComments = $("<h1 class='title__modal'>Comments</h1>");
+    const titleComments = $("<h1 class='title_modal'>Comments</h1>");
     const buttonComments = $("<button class='button__modal__load'>Load Comments</button>");
     buttonComments.on("click",function(){
         loadComents(postId);
@@ -19,6 +19,8 @@ function inspectPost(userId, postId){
     .then(
         function success(data){
             console.log(data);
+            userName.text(data.username);
+            userEmail.text(data.email);
         }, function failed(error){
 
         }
