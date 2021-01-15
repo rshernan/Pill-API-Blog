@@ -84,20 +84,22 @@ max-height:600px;
 flex-direction: column;
 background-color: white;
 border-radius: 15px;
-padding: 50px;
+padding: 30px;
 top: 25%;
-width: 40%;
+width: 60%;
 left: 25%;
 z-index: 1;
 }
 
 .commentsContainer__div{
   overflow-y: scroll;
+  margin-top: 2em;
 }
 
 .title_modal {
 font-size: 28px;
 font-weight: 500;
+margin: 5px;
 }
 
 .content_modal {
@@ -153,34 +155,10 @@ font-size: 18px;
   font-size: 18px;
 }
 
-
-
-
-.div__modal{
-  width: 70vw;
-  height: 70vh;
-  background-color: #f1f1f1;
-  display: flex;
-  border-radius: 15px;
-  flex-direction: column;
-}
-
-.div__modal__background{
-  width: 100VW;
-  height: 100Vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .button__modal__close{
   margin: 10px 10px 10px auto;
   width: 100px;
-  height: 50px;
+  min-height: 40px;
   background-color: #1f1f1f;
   color: white;
   border: black solid 2px;
@@ -190,6 +168,23 @@ font-size: 18px;
 }
 
 .button__modal__close:active{
+  box-shadow: none;
+}
+
+.modal p{
+  margin:10px;
+}
+
+.button__modal__load{
+  min-height: 40px;
+  background-color: #1f1f1f;
+  color: white;
+  border: black solid 2px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+}
+
+.button__modal__load:active{
   box-shadow: none;
 }
 
