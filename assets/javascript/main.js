@@ -16,7 +16,7 @@ $.ajax("https://jsonplaceholder.typicode.com/posts").then(
       
 
       $(postTitle).on("click", function () {
-        inspectPost(element.userId, element.id);
+        inspectPost(element);
       });
       
 
