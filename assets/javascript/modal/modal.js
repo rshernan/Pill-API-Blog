@@ -4,11 +4,11 @@ function initializeModal() {
   const closeButton = $('<button class="button__modal__close">close</button>');
   closeButton.on("click", function () {
     setTimeout(function(){
-        $(".modal_container").fadeOut(1500);
+        $(".modal_container").fadeOut(800);
     }, 0)
     setTimeout(function(){
         $(".modal_container").remove();
-    }, 1500)
+    }, 800)
   });
   backgroundModal.append(modal);
   modal.append(closeButton);
@@ -114,11 +114,11 @@ function editPost(postId) {
         $(".toast").append(submittedData1);
         $(".toast").append(submittedData2);
         setTimeout(function(){
-            $(".modal_container").fadeOut(1500);
+            $(".modal_container").fadeOut(800);
         }, 1500)
         setTimeout(function(){
             $(".modal_container").remove();
-        }, 3000)
+        }, 2300)
       },
       function failed(err) {
         requestStatus.text("Request failed");
