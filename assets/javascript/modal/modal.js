@@ -93,8 +93,11 @@ function editPost(postId) {
 
     setTimeout(function () {
       $(".toast").fadeOut(1500);
-      $(".toast").remove();
     }, 1500);
+
+    setTimeout(function () {
+        $(".toast").remove();
+      }, 3000);
 
     $.ajax(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
       method: "PUT",
@@ -112,8 +115,10 @@ function editPost(postId) {
         $(".toast").append(submittedData2);
         setTimeout(function(){
             $(".modal_container").fadeOut(1500);
-            $(".modal_container").remove();
         }, 1500)
+        setTimeout(function(){
+            $(".modal_container").remove();
+        }, 3000)
       },
       function failed(err) {
         requestStatus.text("Request failed");
@@ -129,7 +134,11 @@ function deletePost(postId) {
 
   setTimeout(function () {
     $(".toast").fadeOut(1500);
-  }, 1000);
+  }, 1500);
+
+  setTimeout(function () {
+    $(".toast").remove();
+  }, 3000);
 
   $("body").append("<div class='toast'></div>");
   $(".toast").append(requestStatus);
