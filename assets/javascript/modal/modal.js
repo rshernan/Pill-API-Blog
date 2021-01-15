@@ -5,9 +5,9 @@ backgroundModal.append(modal);
 modal.append(closeButton);
 
 function inspectPost(userId, postId){
-    const postTitle = $("<h1 class='title__modal'>Post Title</h1>");
+    const postTitle = $("<h1 class='title_modal'>Post Title</h1>");
     const postBody = $("<p>Example</p>");
-    const userTitle = $("<h2 class='title__modal'>USER</h2>");
+    const userTitle = $("<h2 class='title_modal'>USER</h2>");
     const userName = $("<p>Example</p>");
     const userEmail = $("<p>Example</p>");
     const titleComments = $("<h1 class='title__modal'>Comments</h1>");
@@ -34,7 +34,6 @@ function inspectPost(userId, postId){
 }
 
 function editPost(postId){
-
     console.log(postId);
 
     const editModal = $(`
@@ -56,7 +55,7 @@ function editPost(postId){
             </div>
         </div>
     </div>`
-)
+    )
 
 
     $("#modal").append(editModal);
@@ -88,21 +87,20 @@ function editPost(postId){
                 $(".toast").append(submittedData1);
                 $(".toast").append(submittedData2);
                 
-
             },
             function failed(err){
-
                 requestStatus.text("Request failed");
             }
         )
-
     })
+}
 
+function deletePost(postId){
 
-
-    
-
-
+    $.ajax(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+        method: "DELETE",
+        contentType: "application/json",
+    })
 }
 
 function loadComents(postId){

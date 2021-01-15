@@ -15,14 +15,17 @@ $.ajax("https://jsonplaceholder.typicode.com/posts").then(
 
       
 
-      $(".post_title").on("click", function () {
+      $(postTitle).on("click", function () {
         inspectPost(element.userId, element.id);
       });
       
 
       $(`#${element.id} .btn__edit`).on("click", function(){
-
         editPost(element.id);
+      });
+
+      $(`#${element.id} .btn__delete`).on("click", function(){
+        deletePost(element.id);
       });
 
     });
