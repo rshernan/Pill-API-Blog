@@ -3,7 +3,12 @@ function initializeModal() {
   const modal = $('<div class="modal"><div>');
   const closeButton = $('<button class="button__modal__close">close</button>');
   closeButton.on("click", function () {
-    $(".modal_container").remove();
+    setTimeout(function(){
+        $(".modal_container").fadeOut(1500);
+    }, 0)
+    setTimeout(function(){
+        $(".modal_container").remove();
+    }, 1500)
   });
   backgroundModal.append(modal);
   modal.append(closeButton);

@@ -164,24 +164,14 @@ margin: 5px;
   background-color: #1f1f1f;
   color: white;
   border: black solid 2px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
 }
 
-.button__modal__close:active{
-  box-shadow: none;
-}
 
 .button__modal__load{
   min-height: 40px;
   background-color: #1f1f1f;
   color: white;
   border: black solid 2px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
-
-}
-
-.button__modal__load:active{
-  box-shadow: none;
 }
