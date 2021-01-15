@@ -1,6 +1,6 @@
 function initializeModal() {
   const backgroundModal = $('<div class="modal_container"></div>');
-  const modal = $('<div class="modal"><div>');
+  const modal = $('<div class="modal"></div>');
   const closeButton = $('<button class="button__modal__close">close</button>');
   closeButton.on("click", function () {
     setTimeout(function(){
@@ -19,6 +19,7 @@ function inspectPost(element) {
   initializeModal();
   console.log(element);
   const postTitle = $(`<h1 class='title_modal'>${element.title}</h1>`);
+  const modalContent = $('<div class="content_modal"></div>');
   const postBody = $(`<p>${element.body}</p>`);
   const userTitle = $("<h2 class='title_modal'>USER</h2>");
   const userName = $("<p>Example</p>");
@@ -41,14 +42,16 @@ function inspectPost(element) {
     },
     function failed(error) {}
   );
-  $(".modal").append(postTitle);
-  $(".modal").append(postBody);
-  $(".modal").append(userTitle);
-  $(".modal").append(userName);
-  $(".modal").append(userEmail);
-  $(".modal").append(titleComments);
-  $(".modal").append(buttonComments);
-  $(".modal").append(commentsContainer);
+  $(".modal").append(modalContent);
+   $(modalContent).append(postTitle);
+
+  $(modalContent).append(postBody);
+  $(modalContent).append(userTitle);
+  $(modalContent).append(userName);
+  $(modalContent).append(userEmail);
+  $(modalContent).append(titleComments);
+  $(modalContent).append(buttonComments);
+  $(modalContent).append(commentsContainer);
 }
 
 function editPost(postId) {
@@ -72,8 +75,8 @@ function editPost(postId) {
     `<button class="button__modal__load" type="submit" id="submit">Save</button>`
   );
 
-  $(".modal").append(modalTitle);
   $(".modal").append(modalContent);
+  $(modalContent).append(modalTitle);
   $(modalContent).append(editForm);
   $(editForm).append(titleLabel);
   $(editForm).append(titleInput);

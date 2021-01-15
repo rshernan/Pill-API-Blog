@@ -84,7 +84,7 @@ max-height:600px;
 flex-direction: column;
 background-color: white;
 border-radius: 15px;
-padding: 50px;
+padding: 20px;
 width: 60%;
 z-index: 1;
 }
@@ -97,11 +97,11 @@ z-index: 1;
 .title_modal {
 font-size: 28px;
 font-weight: 500;
-margin: 5px;
+margin: 10px;
 }
 
 .content_modal {
-  margin-top: 50px;
+  margin: 30px;
 }
 
 .form_modal {
@@ -122,14 +122,14 @@ margin: 5px;
   border: 1px solid rgb(224, 224, 224);
 }
 
-.modal_button {
+/* .modal_button {
   height: 50px;
   margin: 10px 0;
   background-color: rgb(224, 224, 224);
   border-radius: 15px;
   border: none;
   font-size: 18px;
-}
+} */
 
 .toast {
   position: absolute;
@@ -174,4 +174,6 @@ margin: 5px;
   color: white;
   border: black solid 2px;
   border-radius: 15px;
+  margin-top: 10px;
+  width: 100%;
 }
